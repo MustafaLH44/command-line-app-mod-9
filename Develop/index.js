@@ -1,9 +1,10 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
-const generateMarkdown = require('./utils/generateMarkdown');
+const generateMarkdown = require('./utils/generateMarkdown'); // requiring generateMarkdown file path and storing it as a variable globally so that we can use the method we need below.
 
 // TODO: Create an array of questions for user input
+// using inquirer package to prompt questions to user and creating a README.md file based on these imputs
 const questions =inquirer
 .prompt([
   {
@@ -46,9 +47,9 @@ const questions =inquirer
 .then((questions) => {
   const readMeContent = generateMarkdown(questions);
   console.log(readMeContent);
-  writeToFile('README.md',readMeContent);
+  writeToFile('README.md',readMeContent); // calling writeToFile function from below to actually handle generating the new file or throw an error message in case something isnt working
 });
-
+// calling generateMarkdown method from another js file and storing it in readMeContent variable and passing the questions array from above directly as an argument
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
