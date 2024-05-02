@@ -15,7 +15,7 @@ const questions =inquirer
   ,{
     type: 'input',
     name: 'description',
-    message: 'What is the description of your app,'
+    message: 'What is the description of your app?'
   },
   {
     type: 'input',
